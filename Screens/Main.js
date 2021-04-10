@@ -16,6 +16,10 @@ class Main extends React.Component {
         navigate('MyCalendar')
     }
 
+    gotToSettings = (navigate) => {
+        navigate("Settings")
+    }
+
     render() {
       return (
         <View style={styles.wrapView}>
@@ -28,7 +32,8 @@ class Main extends React.Component {
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.buttonText}>My Friends</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                onPress={()=>this.gotToSettings(this.props.navigation.navigate)}>
                     <Text style={styles.buttonText}>Settings</Text>
                 </TouchableOpacity>
                 {/* <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Hello</Text></TouchableOpacity> */}

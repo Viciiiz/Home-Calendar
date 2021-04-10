@@ -6,6 +6,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Home from './Screens/Home';
 import Main from './Screens/Main';
 import MyCalendar from './Screens/MyCalendar';
+import Settings from './Screens/Settings';
 // import { StyleSheet, Text, View } from 'react-native';
 
 // export default function App() {
@@ -20,7 +21,8 @@ import MyCalendar from './Screens/MyCalendar';
 const AppNavigator = createStackNavigator({
     Home: Home,
     Main: Main,
-    MyCalendar: MyCalendar
+    MyCalendar: MyCalendar,
+    Settings: Settings
 },
 {
   initialRouteName: 'Home'

@@ -5,9 +5,6 @@ import { Button } from 'native-base';
 // import { ReactAgenda , ReactAgendaCtrl , guid ,  Modal } from 'react-agenda';
 
 
-
-
-
 //This is where the user accesses their calendar
 /**
  * users can:
