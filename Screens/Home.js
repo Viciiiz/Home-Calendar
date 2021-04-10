@@ -10,6 +10,10 @@ class Home extends React.Component {
     // const [text, onChangeText] = React.useState("Useless Text");
     // const [number, onChangeNumber] = React.useState(null);
 
+    goToMainScreen = (navigate) => {
+        navigate('Main')
+    }
+
     render() {
       return (
         <View style={styles.wrapView}>
@@ -31,7 +35,10 @@ class Home extends React.Component {
                 // keyboardType="numeric"
             />
             <View style={styles.buttonView}>
-                <Button style={styles.button}><Text style={styles.buttonText}>Login</Text></Button>
+                <Button style={styles.button} 
+                onPress={()=>this.goToMainScreen(this.props.navigation.navigate)}>
+                    <Text style={styles.buttonText}>Login</Text>
+                </Button>
                 <Button style={styles.button}><Text style={styles.buttonText}>Sign-up</Text></Button>
             </View>
             <Text style={styles.forgotText}>Forgot Password?</Text>

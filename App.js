@@ -4,6 +4,7 @@ import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Home from './Screens/Home';
+import Main from './Screens/Main';
 // import { StyleSheet, Text, View } from 'react-native';
 
 // export default function App() {
@@ -17,6 +18,7 @@ import Home from './Screens/Home';
 
 const AppNavigator = createStackNavigator({
     Home: Home,
+    Main: Main
 },
 {
   initialRouteName: 'Home'
