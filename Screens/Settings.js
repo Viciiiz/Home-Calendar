@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Switch } from 'react-native';
+import { StyleSheet, Text, View, Switch, TouchableOpacity } from 'react-native';
 import * as React from 'react';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { TextInput } from 'react-native-gesture-handler';
@@ -50,6 +50,14 @@ const Settings = () => {
                     />
                 </View>
             </View>
+            <View style={styles.endButtons}>
+                <TouchableOpacity style={styles.logoutButton}>
+                    <Text style={styles.logoutText}>Log-Out</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.deleteButton}>
+                    <Text style={styles.deleteText}>Delete Account</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
@@ -61,10 +69,25 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         fontSize: 20,
         color: 'white',
-        marginTop: 20
+        marginTop: 20,
+        marginBottom: 5
     },
     availabilityView:{
-        marginTop: 10
+        marginTop: 10,
+    },
+    deleteButton:{
+        backgroundColor: 'red',
+        justifyContent: 'center',
+        margin: 10,
+        width: '45%',
+        // alignContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
+    },
+    deleteText: {
+        fontWeight: 'bold',
+        color: 'white',
+        fontSize: 17
     },
     dropdown: {
         width: '40%',
@@ -79,8 +102,30 @@ const styles = StyleSheet.create({
         // justifyContent: 'left'
     },
     dropdownView: {
-        alignItems: 'flex-end',
-        marginEnd: 10
+        alignItems: 'flex-start',
+        marginEnd: 10,
+        marginLeft: 10
+    },
+    endButtons: {
+        flexDirection: 'row',
+        flex: 1,
+        justifyContent: 'flex-end',
+        marginTop: 265,
+        marginBottom: 10
+    },
+    logoutButton: {
+        backgroundColor: 'white',
+        width: '45%',
+        margin: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 10,
+    },
+    logoutText: {
+        color: 'red',
+        margin: 10,
+        fontWeight: 'bold',
+        fontSize: 17
     },
     statusInput: {
         borderWidth: 1,
@@ -94,7 +139,8 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         fontSize: 20,
         color: 'white',
-        marginTop: 20
+        marginTop: 20,
+        marginBottom: 5
     },
     statusView: {
         marginTop: 10

@@ -20,6 +20,10 @@ class Main extends React.Component {
         navigate("Settings")
     }
 
+    goToFriends = (navigate) => {
+        navigate('Friends')
+    }
+
     render() {
       return (
         <View style={styles.wrapView}>
@@ -29,7 +33,8 @@ class Main extends React.Component {
                 onPress={()=>this.goToMyCalendar(this.props.navigation.navigate)}>
                     <Text style={styles.buttonText}>View My Calendar</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                onPress={()=>this.goToFriends(this.props.navigation.navigate)}>
                     <Text style={styles.buttonText}>My Friends</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button}
