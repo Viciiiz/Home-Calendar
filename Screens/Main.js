@@ -1,6 +1,6 @@
 import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
 import * as React from 'react';
-import { Button } from 'native-base';
+// import { Button } from 'native-base';
 // import { TouchableOpacity } from 'react-native-gesture-handler';
 
 //here is what the user sees after login in
@@ -11,12 +11,18 @@ import { Button } from 'native-base';
  * 3. view settings
  */
 class Main extends React.Component {
+
+    goToMyCalendar = (navigate) => {
+        navigate('MyCalendar')
+    }
+
     render() {
       return (
         <View style={styles.wrapView}>
             <Text style={styles.welcomeText}>Welcome to Home-Calendar USERNAME!</Text>
             <View style={styles.buttonView}>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                onPress={()=>this.goToMyCalendar(this.props.navigation.navigate)}>
                     <Text style={styles.buttonText}>View My Calendar</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button}>
