@@ -9,6 +9,9 @@ import MyCalendar from './Screens/MyCalendar';
 import Settings from './Screens/Settings';
 import Friends from './Screens/Friends';
 // import { StyleSheet, Text, View } from 'react-native';
+import test from './Screens/test'
+
+import firebase from 'firebase';
 
 // export default function App() {
 //   return (
@@ -18,13 +21,29 @@ import Friends from './Screens/Friends';
 //     </View>
 //   );
 // }
+const firebaseConfig = { // insert your key below
+  apiKey: 'AIzaXXXXXXXXXXXXXXXXXXXXXXX',
+  authDomain: 'rnfirebXXX-XXXX.firebaseapp.com',
+  databaseURL: 'rnfirebXXX-XXXX.firebaseapp.com',
+  projectId: 'rnfirebase-XXXX',
+  storageBucket: 'rnfirebase-XXXX.appspot.com',
+  messagingSenderId: 'XXXXXXX'
+};
+
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app();
+}
 
 const AppNavigator = createStackNavigator({
     Home: Home,
     Main: Main,
     MyCalendar: MyCalendar,
     Settings: Settings,
-    Friends: Friends
+    Friends: Friends,
+    test: test
 },
 {
   initialRouteName: 'Home'

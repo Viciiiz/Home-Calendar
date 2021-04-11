@@ -1,5 +1,7 @@
 import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
 import * as React from 'react';
+import firebase from 'firebase';
+
 // import { Button } from 'native-base';
 // import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -10,6 +12,7 @@ import * as React from 'react';
  * 2. view list of friends,
  * 3. view settings
  */
+
 class Main extends React.Component {
 
     goToMyCalendar = (navigate) => {
@@ -24,10 +27,12 @@ class Main extends React.Component {
         navigate('Friends')
     }
 
+    username = firebase.auth().currentUser.email.replace("@gmail.com", "").toUpperCase();
+
     render() {
       return (
         <View style={styles.wrapView}>
-            <Text style={styles.welcomeText}>Welcome to Home-Calendar USERNAME!</Text>
+            <Text style={styles.welcomeText}>Welcome to Home-Calendar {this.username}!</Text>
             <View style={styles.buttonView}>
                 <TouchableOpacity style={styles.button}
                 onPress={()=>this.goToMyCalendar(this.props.navigation.navigate)}>
@@ -41,7 +46,6 @@ class Main extends React.Component {
                 onPress={()=>this.gotToSettings(this.props.navigation.navigate)}>
                     <Text style={styles.buttonText}>Settings</Text>
                 </TouchableOpacity>
-                {/* <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Hello</Text></TouchableOpacity> */}
             </View>
         </View>
       )
