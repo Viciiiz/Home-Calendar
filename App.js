@@ -7,8 +7,8 @@ import Home from './Screens/Home';
 import Main from './Screens/Main';
 import MyCalendar from './Screens/MyCalendar';
 import Settings from './Screens/Settings';
-import Friends from './Screens/Friends';
 import FriendsList from './Screens/FriendsList';
+import AddFriends from './Screens/AddFriends';
 // import { StyleSheet, Text, View } from 'react-native';
 
 import firebase from 'firebase';
@@ -44,8 +44,8 @@ const AppNavigator = createStackNavigator({
     Main: Main,
     MyCalendar: MyCalendar,
     Settings: Settings,
-    Friends: Friends,
-    FriendsList: FriendsList
+    FriendsList: FriendsList,
+    AddFriends: AddFriends
 },
 {
   initialRouteName: 'Home'

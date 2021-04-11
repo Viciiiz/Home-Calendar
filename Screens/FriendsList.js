@@ -20,6 +20,10 @@ export default class List extends Component {
     });
   }
 
+  goToAddFriends = (navigate) => {
+    navigate("AddFriends")
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -30,7 +34,8 @@ export default class List extends Component {
                         <TouchableOpacity style={styles.endButton}>
                             <Text style={styles.endButtonText}>Manage Friends</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.endButton}>
+                        <TouchableOpacity style={styles.endButton}
+                        onPress={()=>this.goToAddFriends(this.props.navigation.navigate)}>
                             <Text style={styles.endButtonText}>Add Friends</Text>
                         </TouchableOpacity>
                     </View>
@@ -38,7 +43,8 @@ export default class List extends Component {
             ) : (
             <View>
                 <Text style={styles.emptyList}>You don't have any friends at the moment</Text>
-                <TouchableOpacity style={styles.addButton}>
+                <TouchableOpacity style={styles.addButton}
+                onPress={()=>this.goToAddFriends(this.props.navigation.navigate)}>
                     <Text style={styles.addButtonText}>Add Friends</Text>
                 </TouchableOpacity>
             </View>
