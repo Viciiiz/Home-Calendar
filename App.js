@@ -8,8 +8,8 @@ import Main from './Screens/Main';
 import MyCalendar from './Screens/MyCalendar';
 import Settings from './Screens/Settings';
 import Friends from './Screens/Friends';
+import FriendsList from './Screens/FriendsList';
 // import { StyleSheet, Text, View } from 'react-native';
-import test from './Screens/test'
 
 import firebase from 'firebase';
 
@@ -22,12 +22,14 @@ import firebase from 'firebase';
 //   );
 // }
 const firebaseConfig = { // insert your key below
-  apiKey: 'AIzaXXXXXXXXXXXXXXXXXXXXXXX',
-  authDomain: 'rnfirebXXX-XXXX.firebaseapp.com',
-  databaseURL: 'rnfirebXXX-XXXX.firebaseapp.com',
-  projectId: 'rnfirebase-XXXX',
-  storageBucket: 'rnfirebase-XXXX.appspot.com',
-  messagingSenderId: 'XXXXXXX'
+  apiKey: "AIzaSyDloVC7ynp9ulboB4w8vjemJd6m6BfP11Y",
+  authDomain: "home-calendar-7f582.firebaseapp.com",
+  databaseURL: "https://home-calendar-7f582-default-rtdb.firebaseio.com",
+  projectId: "home-calendar-7f582",
+  storageBucket: "home-calendar-7f582.appspot.com",
+  messagingSenderId: "850279712728",
+  appId: "1:850279712728:web:4ec9277e71f22fb7e054ad",
+  measurementId: "G-XGQD8SC1TK"
 };
 
 
@@ -43,7 +45,7 @@ const AppNavigator = createStackNavigator({
     MyCalendar: MyCalendar,
     Settings: Settings,
     Friends: Friends,
-    test: test
+    FriendsList: FriendsList
 },
 {
   initialRouteName: 'Home'

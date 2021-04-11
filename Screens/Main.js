@@ -24,7 +24,7 @@ class Main extends React.Component {
     }
 
     goToFriends = (navigate) => {
-        navigate('Friends')
+        navigate('FriendsList')
     }
 
     username = firebase.auth().currentUser.email.replace("@gmail.com", "").toUpperCase();
