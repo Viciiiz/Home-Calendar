@@ -112,7 +112,9 @@ class Home extends React.Component {
                 </View>
                 <Text 
                 onPress = {()=> this.forgotPassword(this.state.email)}
-                style={styles.forgotText}>Forgot Password?</Text>
+                style={styles.forgotText}>Forgot Password?
+                {/* Should be a clickable component */}
+                </Text> 
             </View>
         </View>
       )

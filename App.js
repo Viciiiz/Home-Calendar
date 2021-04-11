@@ -9,18 +9,13 @@ import MyCalendar from './Screens/MyCalendar';
 import Settings from './Screens/Settings';
 import FriendsList from './Screens/FriendsList';
 import AddFriends from './Screens/AddFriends';
+import FriendCalendar from './Screens/FriendCalendar';
+import DetailedSchedule from './Screens/DetailedSchedule';
 // import { StyleSheet, Text, View } from 'react-native';
 
 import firebase from 'firebase';
+import ManageFriends from './Screens/ManageFriends';
 
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>Open up App.js to start working on your app!</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
 const firebaseConfig = { // insert your key below
   apiKey: "AIzaSyDloVC7ynp9ulboB4w8vjemJd6m6BfP11Y",
   authDomain: "home-calendar-7f582.firebaseapp.com",
@@ -45,7 +40,10 @@ const AppNavigator = createStackNavigator({
     MyCalendar: MyCalendar,
     Settings: Settings,
     FriendsList: FriendsList,
-    AddFriends: AddFriends
+    AddFriends: AddFriends,
+    FriendCalendar: FriendCalendar,
+    DetailedSchedule: DetailedSchedule,
+    ManageFriends: ManageFriends
 },
 {
   initialRouteName: 'Home'

@@ -24,14 +24,24 @@ export default class List extends Component {
     navigate("AddFriends")
   }
 
+  goToFriendAgenda = (navigate) => {
+    navigate('FriendCalendar')
+  }
+
+  goToManageFriends = (navigate) => {
+    navigate('ManageFriends')
+  }
+
+
   render() {
     return (
       <View style={styles.container}>
             {this.state.friends.length > 0 ? (
                 <View>
-                    <ListOfFriends items={this.state.friends} />
+                    <ListOfFriends items={this.state.friends}/>
                     <View style={styles.endButtonView}>
-                        <TouchableOpacity style={styles.endButton}>
+                        <TouchableOpacity style={styles.endButton}
+                        onPress={()=>this.goToManageFriends(this.props.navigation.navigate)}>
                             <Text style={styles.endButtonText}>Manage Friends</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.endButton}
@@ -82,7 +92,7 @@ const styles = StyleSheet.create({
         width: '45%',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'grey',
+        backgroundColor: 'black',
         marginLeft: 12,
         height: 40,
         borderRadius: 10,

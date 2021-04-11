@@ -14,13 +14,16 @@ import { Button } from 'native-base';
  */
 class MyCalendar extends React.Component {
 
-    
+    goToDetailedSchedule = (navigate) => {
+        navigate("DetailedSchedule")
+    }
 
     render() {
       return (
         <View>
             {/* <Text>Welcome to the your calendar! </Text> */}
-            <Calendar/>
+            <Calendar
+              onDayPress={(day) => {console.log('selected day', day)}}/>
             <View styles={styles.container}>
                 {/* <Button styles={styles.plusButton}><Text style={styles.plusText}>+</Text></Button> */}
             </View>

@@ -6,8 +6,12 @@ import PropTypes from 'prop-types';
 // this is not a screen, but to map the list of the user's friends and display them in Friends.js
 export default class ListOfFriends extends Component {
   static propTypes = {
-    items: PropTypes.array.isRequired
+    items: PropTypes.array.isRequired,
   };
+
+//   goToFriendAgenda = (navigate) => {
+//       navigate('FriendCalendar')
+//   }
 
   render() {
     return (
@@ -20,7 +24,9 @@ export default class ListOfFriends extends Component {
                     <Text style={styles.nameText}>{item.replace("@gmailcom","").toUpperCase()}</Text>
                     <Text style={styles.tagText}>Tags: Co-worker, Friend</Text>
                     <View style={styles.buttons}>
-                        <TouchableOpacity style={styles.scheduleButton}>
+                        <TouchableOpacity style={styles.scheduleButton}
+                    //    onPress={()=>this.goToFriendAgenda(this.props.navigation.navigate)}
+                       >
                             <Text style={styles.scheduleText}>View Agenda</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.chatButton}>

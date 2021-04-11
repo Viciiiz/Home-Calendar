@@ -7,6 +7,33 @@ import firebase from 'firebase'
 //This is where the user fiends new friends
 class AddFriends extends React.Component {
     
+    constructor(props) {
+        super(props)
+    
+        this.state = ({
+          date: '',
+          email: ''
+        })
+      }
+
+    // currentDate = moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss a');
+
+    writeUserData = (email) => {
+        try {
+          //var database = firebase.database();
+          var userIdentifier2 = String(email);
+          var pathTo = 'userFriends/' + '' + firebase.auth().currentUser.email.replace(".","")
+          firebase.database().ref(pathTo).update({
+          [userIdentifier2]: {
+            Date: new Date().getMilliseconds(),
+            user: email
+            }
+          });
+  
+        } catch (error) {
+          console.log(error.toString())
+        }
+      }
     
     render() {
       return (
@@ -19,7 +46,8 @@ class AddFriends extends React.Component {
                 autoCapitalize="none"
                 placeholder="  Email Address"
             />
-            <TouchableOpacity style={styles.sendRequestButton}>
+            <TouchableOpacity style={styles.sendRequestButton}
+            onPress = {()=> this.writeUserData(this.state.email.replace(".",""))}>
                 <Text style={styles.sendRequestText}>Send Request</Text>
             </TouchableOpacity>
         </View>
